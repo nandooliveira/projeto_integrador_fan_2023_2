@@ -3,11 +3,27 @@
         <title>FAN ADS</title>
     </head>
     <body>
+        <h1>Calcula Média</h1>
+
+        <form>
+            Nota1: 
+            <input id="nota1" type="text" />
+            <br>
+            <br>
+            Nota2: 
+            <input id="nota2" type="text" />
+            <br>
+            <br>
+
+            <button id="calcular">Calcular</button>
+        </form>
+
         <script>
             var nome = "Fernando Oliveira";
+            // console.log(typeof nome);
 
-            console.log(nome);
-            document.write(nome);
+            // console.log(nome);
+            // document.write(nome);
 
             var numero1;
             var numero2;
@@ -15,17 +31,42 @@
             numero1 = 10;
             numero2 = 20;
 
-            console.log(numero1 + numero2);
+            // console.log(typeof numero1);
+            // console.log(typeof numero2);
 
-            var nota1 = 4;
-            var nota2 = 8;
+            // console.log(numero1 + numero2);
 
-            var media = (nota1 + nota2) / 2;
-            console.log(media);
+            // var nota1 = parseInt(prompt("Informe a primeira nota!"));
+            // var nota2 = parseInt(prompt("Informe a segunda nota!"));
 
-            if(media >= 7) {
-                console.log("Aprovado");
-            }
+            var campoNota1 = document.getElementById("nota1");
+            var campoNota2 = document.getElementById("nota2");
+            var button = document.getElementById("calcular");
+
+            var nota1;
+            var nota2;
+
+            button.addEventListener("click", function(event) {
+              event.preventDefault(); 
+              nota1 = parseInt(campoNota1.value); 
+              nota2 = parseInt(campoNota2.value); 
+
+              var media = (nota1 + nota2) / 2;
+
+              if(media >= 7) {
+                  alert("Aprovado");
+              } else if (media >= 5) {
+                  alert("Recuperação");
+              } else {
+                  alert("Reprovado");
+              }
+            });
+
+            // console.log(media);
+
+            // console.log(aprovado)
+            // console.log(typeof aprovado);
+
 
         </script>
     </body>
